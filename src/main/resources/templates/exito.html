@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Producto Registrado</title>
+        <!-- Agregar el enlace a Bootstrap CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            body {
+                background-color: #f0e5ff; /* Color de fondo suave */
+            }
+            .container {
+                margin-top: 50px; /* Espacio superior */
+            }
+            h1 {
+                color: #9b59b6; /* Color morado claro para el encabezado */
+                margin-bottom: 30px; /* Espacio inferior */
+            }
+            .card {
+                border-radius: 15px; /* Bordes redondeados para las tarjetas */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+            }
+            .btn-primary {
+                background-color: #ff69b4; /* Color rosa brillante para el botón */
+                border-color: #ff1493; /* Color del borde del botón */
+            }
+            .btn-primary:hover {
+                background-color: #ff1493; /* Color del botón al pasar el mouse */
+                border-color: #c71585; /* Color del borde al pasar el mouse */
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <h1>Producto Registrado Exitosamente</h1>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Detalles del Producto</h5>
+                    <p><strong>Nombre:</strong> <span th:text="${producto.nombre}"></span></p>
+                    <p><strong>Código:</strong> <span th:text="${producto.codigo}"></span></p>
+                    <p><strong>Descripción:</strong> <span th:text="${producto.descripcion}"></span></p>
+                    <p><strong>Categoría:</strong> <span th:text="${producto.categoria}"></span></p>
+                    <p><strong>Cantidad en Inventario:</strong> <span th:text="${producto.cantidad}"></span></p>
+                    <p><strong>Precio Unitario:</strong> $<span th:text="${producto.precio}"></span></p>
+                    <p><strong>Fecha de Ingreso:</strong> <span th:text="${producto.fechaIngreso}"></span></p>
+                    <p><strong>Fecha de Caducidad:</strong> <span th:text="${producto.fechaCaducidad}"></span></p>
+                    <p><strong>Stock Mínimo:</strong> <span th:text="${producto.stockMinimo}"></span></p>
+                    <p><strong>Stock Máximo:</strong> <span th:text="${producto.stockMaximo}"></span></p>
+                    <p><strong>Marca:</strong> <span th:text="${producto.marca}"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Agregar scripts de Bootstrap -->
+        <script src="../path/to/jquery.min.js"></script> <!-- Asegúrate de poner la ruta correcta -->
+        <script src="../path/to/popper.min.js"></script> <!-- Asegúrate de poner la ruta correcta -->
+        <script src="../path/to/bootstrap.min.js"></script> <!-- Asegúrate de poner la ruta correcta -->
+    </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Registro de Producto</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            body {
+                background-color: #f0e5ff; /* Color de fondo suave */
+            }
+            .container {
+                background-color: #ffffff; /* Fondo blanco para el formulario */
+                border-radius: 15px; /* Bordes redondeados */
+                padding: 40px; /* Espaciado interno */
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+                margin-top: 50px; /* Espacio superior */
+            }
+            h1 {
+                color: #9b59b6; /* Color morado claro para el encabezado */
+                margin-bottom: 30px; /* Espacio inferior */
+            }
+            .form-group label {
+                font-weight: bold; /* Etiquetas en negrita */
+                color: #6a5acd; /* Color azul oscuro para las etiquetas */
+            }
+            .btn-primary {
+                background-color: #ff69b4; /* Color rosa brillante para el botón */
+                border-color: #ff1493; /* Color del borde del botón */
+            }
+            .btn-primary:hover {
+                background-color: #ff1493; /* Color del botón al pasar el mouse */
+                border-color: #c71585; /* Color del borde al pasar el mouse */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <h1 class="text-center">Registro de Producto</h1>
+            <form th:action="@{/producto/registrar}" th:object="${producto}" method="post">
+                <div class="form-group">
+                    <label for="nombre">Nombre del Producto:</label>
+                    <input type="text" id="nombre" th:field="*{nombre}" class="form-control" placeholder="Ej: celular" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="codigo">Código del Producto:</label>
+                    <input type="text" id="codigo" th:field="*{codigo}" class="form-control" placeholder="Ej: E8726" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcion">Descripción:</label>
+                    <input type="text" id="descripcion" th:field="*{descripcion}" class="form-control" placeholder="Ej: celular de 3 ram " required>
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria">Categoría:</label>
+                    <input type="text" id="categoria" th:field="*{categoria}" class="form-control" placeholder="Ej: movil" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidad">Cantidad en Inventario:</label>
+                    <input type="number" id="cantidad" th:field="*{cantidad}" class="form-control" placeholder="Ej: 50" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="precio">Precio Unitario:</label>
+                    <input type="number" id="precio" th:field="*{precio}" class="form-control" placeholder="Ej: 56.00" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fechaIngreso">Fecha de Ingreso:</label>
+                    <input type="date" id="fechaIngreso" th:field="*{fechaIngreso}" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fechaCaducidad">Fecha de Caducidad:</label>
+                    <input type="date" id="fechaCaducidad" th:field="*{fechaCaducidad}" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="stockMinimo">Stock Mínimo:</label>
+                    <input type="number" id="stockMinimo" th:field="*{stockMinimo}" class="form-control" placeholder="Ej: 30" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="stockMaximo">Stock Máximo:</label>
+                    <input type="number" id="stockMaximo" th:field="*{stockMaximo}" class="form-control" placeholder="Ej: 50" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="marca">Marca:</label>
+                    <input type="text" id="marca" th:field="*{marca}" class="form-control" placeholder="Ej: LG" required>
+                </div>
+
+                <button type="submit" class='btn btn-primary'>Registrar Producto</button>
+            </form>
+        </div>
+
+        <!-- Agregar scripts de Bootstrap -->
+        <script src="../path/to/jquery.min.js"></script> <!-- Asegúrate de poner la ruta correcta -->
+        <script src="../path/to/popper.min.js"></script> <!-- Asegúrate de poner la ruta correcta -->
+        <script src="../path/to/bootstrap.min.js"></script> <!-- Asegúrate de poner la ruta correcta -->
+    </body>
+</html>
